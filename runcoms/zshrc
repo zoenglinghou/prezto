@@ -1,13 +1,83 @@
-#
 # Executes commands at the start of an interactive session.
 #
 # Authors:
 #   Sorin Ionescu <sorin.ionescu@gmail.com>
 #
 
+# zmodload zsh/zprof
+
 # Source Prezto.
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
-  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+    source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 
 # Customize to your needs...
+export TERM="xterm-256color"
+
+# Aliases
+alias matlab="matlab -nodesktop -nosplash"
+alias list="ls -ahol"
+alias matrix='unimatrix -f -s 90'
+eval $(thefuck --alias)
+
+# CLI improved
+alias vim="nvim"
+alias ping="prettyping --nolegend"
+alias ping6="prettyping -6 --nolegend"
+alias top="htop"
+alias du="ncdu"
+
+# zsh history
+export HISTFILE=~/.zsh_history   # ensure history file visibility
+
+# additional completions
+fpath=(/usr/local/share/zsh-completions $fpath)
+
+# JAVA
+export JAVA_HOME=$(/usr/libexec/java_home)
+
+# macfeh
+function macfeh() {
+    open -b "drabweb.macfeh" "$@"
+}
+
+# Tesseract
+export TESSDATA_PREFIX="/usr/local/Cellar/tesseract/$(ls /usr/local/Cellar/tesseract | tail -1)/share/tessdata"
+
+# youtube-dl
+alias yd="youtube-dl"
+
+# iTerm2
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+if [ "$TERM_PROGRAM" = "iTerm.app" ]; then
+    export MPLBACKEND="module://itermplot"
+fi;
+
+# fzf
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
+
+# zlua
+alias z="_zlua -I"
+
+# taskwarrior
+export TASKRC=.config/task/taskrc
+
+# pipenv
+eval "$(pipenv --completion)"
+
+# gnupg
+export GPG_TTY=$(tty)
+
+# go
+export GOPATH=$HOME/go
+
+# resh
+# [ -f ~/.resh/shellrc ] && source ~/.resh/shellrc
+
+# dry
+alias dry="dry -H tcp://10.0.0.1:2376 -t 1"
+
+# zprof

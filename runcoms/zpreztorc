@@ -10,7 +10,7 @@
 #
 
 # Set case-sensitivity for completion, history lookup, etc.
-# zstyle ':prezto:*:*' case-sensitive 'yes'
+zstyle ':prezto:*:*' case-sensitive 'no'
 
 # Color output (auto set to 'no' on dumb terminals).
 zstyle ':prezto:*:*' color 'yes'
@@ -31,14 +31,23 @@ zstyle ':prezto:*:*' color 'yes'
 # The order matters.
 zstyle ':prezto:load' pmodule \
   'environment' \
-  'terminal' \
-  'editor' \
-  'history' \
-  'directory' \
-  'spectrum' \
-  'utility' \
+  'autosuggestions' \
   'completion' \
+  'directory' \
+  'editor' \
+  'git' \
+  'history-substring-search' \
+  'history' \
+  'homebrew' \
+  'syntax-highlighting' \
+  'gnu-utility' \
+  'utility' \
+  'zlua' \
+  'zsh-autopair' \
+  'zsh-autoswitch-virtualenv' \
   'prompt'
+
+zstyle ':prezto:load' pmodule-dirs $HOME/.zsh
 
 #
 # Autosuggestions
@@ -48,14 +57,6 @@ zstyle ':prezto:load' pmodule \
 # zstyle ':prezto:module:autosuggestions:color' found ''
 
 #
-# Completions
-#
-
-# Set the entries to ignore in static */etc/hosts* for host completion.
-# zstyle ':prezto:module:completion:*:hosts' etc-host-ignores \
-#   '0.0.0.0' '127.0.0.1'
-
-#
 # Editor
 #
 
@@ -63,7 +64,7 @@ zstyle ':prezto:load' pmodule \
 zstyle ':prezto:module:editor' key-bindings 'emacs'
 
 # Auto convert .... to ../..
-# zstyle ':prezto:module:editor' dot-expansion 'yes'
+zstyle ':prezto:module:editor' dot-expansion 'yes'
 
 # Allow the zsh prompt context to be shown.
 #zstyle ':prezto:module:editor' ps-context 'yes'
@@ -80,17 +81,17 @@ zstyle ':prezto:module:editor' key-bindings 'emacs'
 #
 
 # Set the command prefix on non-GNU systems.
-# zstyle ':prezto:module:gnu-utility' prefix 'g'
+zstyle ':prezto:module:gnu-utility' prefix 'g'
 
 #
 # History Substring Search
 #
 
 # Set the query found color.
-# zstyle ':prezto:module:history-substring-search:color' found ''
+zstyle ':prezto:module:history-substring-search:color' found 'green'
 
 # Set the query not found color.
-# zstyle ':prezto:module:history-substring-search:color' not-found ''
+zstyle ':prezto:module:history-substring-search:color' not-found 'red'
 
 # Set the search globbing flags.
 # zstyle ':prezto:module:history-substring-search' globbing-flags ''
@@ -116,16 +117,10 @@ zstyle ':prezto:module:editor' key-bindings 'emacs'
 # Set the prompt theme to load.
 # Setting it to 'random' loads a random theme.
 # Auto set to 'off' on dumb terminals.
-zstyle ':prezto:module:prompt' theme 'sorin'
+zstyle ':prezto:module:prompt' theme 'powerlevel10k'
 
-# Set the working directory prompt display length.
-# By default, it is set to 'short'. Set it to 'long' (without '~' expansion)
-# for longer or 'full' (with '~' expansion) for even longer prompt display.
+# Set how themes that use promptpwd function display the pwd, can be 'short', 'long', or 'full'
 # zstyle ':prezto:module:prompt' pwd-length 'short'
-
-# Set the prompt to display the return code along with an indicator for non-zero
-# return codes. This is not supported by all prompts.
-# zstyle ':prezto:module:prompt' show-return-val 'yes'
 
 #
 # Python
@@ -133,9 +128,6 @@ zstyle ':prezto:module:prompt' theme 'sorin'
 
 # Auto switch the Python virtualenv on directory change.
 # zstyle ':prezto:module:python:virtualenv' auto-switch 'yes'
-
-# Automatically initialize virtualenvwrapper if pre-requisites are met.
-# zstyle ':prezto:module:python:virtualenv' initialize 'yes'
 
 #
 # Ruby
@@ -168,12 +160,12 @@ zstyle ':prezto:module:prompt' theme 'sorin'
 # Set syntax highlighters.
 # By default, only the main highlighter is enabled.
 # zstyle ':prezto:module:syntax-highlighting' highlighters \
-#   'main' \
-#   'brackets' \
-#   'pattern' \
-#   'line' \
-#   'cursor' \
-#   'root'
+#    'main' \
+#    'brackets' \
+#    'pattern' \
+#    'line' \
+#    'cursor' \
+#    'root'
 #
 # Set syntax highlighting styles.
 # zstyle ':prezto:module:syntax-highlighting' styles \
@@ -183,7 +175,7 @@ zstyle ':prezto:module:prompt' theme 'sorin'
 #
 # Set syntax pattern styles.
 # zstyle ':prezto:module:syntax-highlighting' pattern \
-#   'rm*-rf*' 'fg=white,bold,bg=red'
+#   'rm*-rf*' 'fg=white,bold,bg=yellow'
 
 #
 # Terminal
@@ -193,10 +185,10 @@ zstyle ':prezto:module:prompt' theme 'sorin'
 # zstyle ':prezto:module:terminal' auto-title 'yes'
 
 # Set the window title format.
-# zstyle ':prezto:module:terminal:window-title' format '%n@%m: %s'
+# zstyle ':prezto:module:terminal:window-title' format "$(ps -p $$ -o comm=)"
 
 # Set the tab title format.
-# zstyle ':prezto:module:terminal:tab-title' format '%m: %s'
+zstyle ':prezto:module:terminal:tab-title' format "$(ps -p $$ -o comm=)"
 
 # Set the terminal multiplexer title format.
 # zstyle ':prezto:module:terminal:multiplexer-title' format '%s'
@@ -215,13 +207,13 @@ zstyle ':prezto:module:prompt' theme 'sorin'
 # zstyle ':prezto:module:tmux:iterm' integrate 'yes'
 
 # Set the default session name:
-# zstyle ':prezto:module:tmux:session' name 'YOUR DEFAULT SESSION NAME'
+# zstyle ':prezto:module:tmux:session' name ' Mustafar'
 
 #
 # Utility
 #
 
-# Enabled safe options. This aliases cp, ln, mv and rm so that they prompt
-# before deleting or overwriting files. Set to 'no' to disable this safer
+# safe-ops is enabled by default. This aliases rm, mv, cp, and ln so that they
+# prompt before deleting or copying over files. Set to no to disable this safer
 # behavior.
-# zstyle ':prezto:module:utility' safe-ops 'yes'
+zstyle ':prezto:module:utility' safe-ops yes
