@@ -44,8 +44,8 @@ typeset -gU cdpath fpath mailpath path
 # Set the list of directories that Zsh searches for programs.
 path=(
   /Applications/MATLAB_R20*.app/bin
-  /usr/local/opt/python@3.8/bin
-  /Users/CarlosZhang/Library/Python/3.8/bin
+  $HOME/go/bin
+  /Users/CarlosZhang/.local/bin
   /usr/local/opt/ruby/bin
   /usr/local/opt/curl/bin
   /usr/local/sbin
