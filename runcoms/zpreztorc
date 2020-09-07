@@ -44,7 +44,7 @@ zstyle ':prezto:load' pmodule \
   'utility' \
   'zlua' \
   'zsh-autopair' \
-  'zsh-autoswitch-virtualenv' \
+  'zsh-you-should-use' \
   'prompt'
 
 zstyle ':prezto:load' pmodule-dirs $HOME/.zsh

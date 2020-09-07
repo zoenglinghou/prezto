@@ -26,6 +26,7 @@ alias ping="prettyping --nolegend"
 alias ping6="prettyping -6 --nolegend"
 alias top="htop"
 alias du="ncdu"
+function gi() { curl -sLw "\n" https://www.toptal.com/developers/gitignore/api/\$@ ;}
 
 # zsh history
 export HISTFILE=~/.zsh_history   # ensure history file visibility
@@ -79,5 +80,7 @@ export GOPATH=$HOME/go
 
 # dry
 alias dry="dry -H tcp://10.0.0.1:2376 -t 1"
+
+export YSU_MESSAGE_POSITION="after"
 
 # zprof
