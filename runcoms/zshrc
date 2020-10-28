@@ -1,13 +1,78 @@
-#
 # Executes commands at the start of an interactive session.
 #
 # Authors:
 #   Sorin Ionescu <sorin.ionescu@gmail.com>
 #
 
+# zmodload zsh/zprof
+
 # Source Prezto.
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
-  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+    source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 
 # Customize to your needs...
+export TERM="xterm-256color"
+
+# Aliases
+alias matlab="matlab -nodesktop -nosplash"
+alias list="ls -ahol"
+
+# CLI improved
+alias vim="nvim"
+alias ping="prettyping --nolegend"
+alias ping6="prettyping -6 --nolegend"
+alias top="htop"
+alias du="ncdu"
+alias df="duf"
+function gi() { curl -sLw "\n" https://www.toptal.com/developers/gitignore/api/\$@ ;}
+
+# zsh history
+export HISTFILE=~/.zsh_history   # ensure history file visibility
+
+# additional completions
+fpath=(/usr/local/share/zsh-completions $fpath)
+
+# Tesseract
+# export TESSDATA_PREFIX="/usr/local/Cellar/tesseract/$(ls /usr/local/Cellar/tesseract | tail -1)/share/tessdata"
+
+# youtube-dl
+alias yd="youtube-dl"
+
+# iTerm2
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+if [ "$TERM_PROGRAM" = "iTerm.app" ]; then
+    export MPLBACKEND="module://itermplot"
+fi;
+
+# fzf
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
+
+# zlua
+eval "$(lua ~/.zsh/zlua/z.lua --init zsh once enhanced)"
+alias z="_zlua -I"
+
+# taskwarrior
+export TASKRC=.config/task/taskrc
+
+# gnupg
+export GPG_TTY=$(tty)
+
+# go
+export GOPATH=$HOME/go
+
+# resh
+# [ -f ~/.resh/shellrc ] && source ~/.resh/shellrc
+
+export YSU_MESSAGE_POSITION="after"
+
+# ROS
+source /opt/ros/noetic/setup.zsh
+
+# Docker
+alias dry="docker run --rm -it -v /var/run/docker.sock:/var/run/docker.sock -e DOCKER_HOST=$DOCKER_HOST moncho/dry"
+
+## zprof
