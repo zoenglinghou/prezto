@@ -47,6 +47,7 @@ path=(
   /home/carlos/go/bin
   /home/carlos/.local/bin
   /home/carlos/.yarn/bin
+  /home/carlos/.poetry/bin
   $path
 )
 

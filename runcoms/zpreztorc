@@ -39,10 +39,10 @@ zstyle ':prezto:load' pmodule \
   'history-substring-search' \
   'history' \
   'syntax-highlighting' \
+  'terminal' \
   'utility' \
   'zlua' \
   'zsh-autopair' \
-  'docker-zsh-completion' \
   'prompt'
 
 zstyle ':prezto:load' pmodule-dirs $HOME/.zsh
@@ -183,10 +183,10 @@ zstyle ':prezto:module:prompt' theme 'powerlevel10k'
 # zstyle ':prezto:module:terminal' auto-title 'yes'
 
 # Set the window title format.
-# zstyle ':prezto:module:terminal:window-title' format "$(ps -p $$ -o comm=)"
+zstyle ':prezto:module:terminal:window-title' format "$(ps -p $$ -o comm=): $PWD"
 
 # Set the tab title format.
-zstyle ':prezto:module:terminal:tab-title' format "$(ps -p $$ -o comm=)"
+zstyle ':prezto:module:terminal:tab-title' format "$(ps -p $$ -o comm=): $PWD"
 
 # Set the terminal multiplexer title format.
 # zstyle ':prezto:module:terminal:multiplexer-title' format '%s'
