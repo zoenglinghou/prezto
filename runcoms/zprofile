@@ -44,10 +44,10 @@ typeset -gU cdpath fpath mailpath path
 # Set the list of directories that Zsh searches for programs.
 path=(
   /usr/local/bin
-  /home/carlos/go/bin
-  /home/carlos/.local/bin
-  /home/carlos/.yarn/bin
-  /home/carlos/.poetry/bin
+  $HOME/go/bin
+  $HOME/.local/bin
+  /usr/local/lib/node_modules/yarn/bin
+  /var/lib/flatpak/exports/bin
   $path
 )
 

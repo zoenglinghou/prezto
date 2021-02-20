@@ -40,7 +40,8 @@ fpath=($HOME/.zsh/docker-completion $fpath)
 alias yd="youtube-dl"
 
 # fzf
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+source /usr/share/doc/fzf/examples/key-bindings.zsh
+source /usr/share/doc/fzf/examples/completion.zsh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
@@ -62,6 +63,21 @@ source /opt/ros/noetic/setup.zsh
 
 # Docker
 alias dry="docker run -it --rm -v /var/run/docker.sock:/var/run/docker.sock -e DOCKER_HOST=$DOCKER_HOST moncho/dry"
+alias docui="docker run --rm -itv /var/run/docker.sock:/var/run/docker.sock skanehira/docui"
 alias ab="docker run -it --rm -p 8000:8000 -v $HOME/Nextcloud/archivebox:/data nikisweeting/archivebox"
+
+# Pipenv
+eval "$(pipenv --completion)"
+
+# VLC + yt-dl
+function vlc-yt () {
+    org.videolan.VLC "$(youtube-dl --get-url --format best $@)"
+}
+
+# ripgrep
+alias rg="rg -p"
+
+# kitty
+kitty + complete setup zsh | source /dev/stdin
 
 ## zprof
