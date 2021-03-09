@@ -31,7 +31,7 @@ function gi() { curl -sLw "\n" https://www.toptal.com/developers/gitignore/api/\
 export HISTFILE=~/.zsh_history   # ensure history file visibility
 
 # additional completions
-fpath=($HOME/.zsh/docker-completion $fpath)
+fpath=(/usr/share/yadm/completion $fpath)
 
 # Tesseract
 # export TESSDATA_PREFIX="/usr/local/Cellar/tesseract/$(ls /usr/local/Cellar/tesseract | tail -1)/share/tessdata"
@@ -63,8 +63,7 @@ source /opt/ros/noetic/setup.zsh
 
 # Docker
 alias dry="docker run -it --rm -v /var/run/docker.sock:/var/run/docker.sock -e DOCKER_HOST=$DOCKER_HOST moncho/dry"
-alias docui="docker run --rm -itv /var/run/docker.sock:/var/run/docker.sock skanehira/docui"
-alias ab="docker run -it --rm -p 8000:8000 -v $HOME/Nextcloud/archivebox:/data nikisweeting/archivebox"
+alias ab="podman run -dt --name archivebox --rm -p 8000:8000 -v $HOME/Nextcloud/archivebox:/data docker.io/archivebox/archivebox"
 
 # Pipenv
 eval "$(pipenv --completion)"
