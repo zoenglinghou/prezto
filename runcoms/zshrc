@@ -25,7 +25,7 @@ alias ping6="prettyping -6 --nolegend"
 alias top="htop"
 alias du="ncdu"
 alias df="duf"
-function gi() { curl -sLw "\n" https://www.toptal.com/developers/gitignore/api/\$@ ;}
+function gi() { curl -sLw "\n" https://www.toptal.com/developers/gitignore/api/$@ ;}
 
 # zsh history
 export HISTFILE=~/.zsh_history   # ensure history file visibility
