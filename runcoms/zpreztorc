@@ -37,13 +37,13 @@ zstyle ':prezto:load' pmodule \
   'editor' \
   'git' \
   'history-substring-search' \
-  'history' \
   'syntax-highlighting' \
   'terminal' \
   'utility' \
   'zlua' \
   'zsh-autopair' \
   'zsh-autoswitch-virtualenv' \
+  'zsh-autoenv' \
   'prompt'
 
 zstyle ':prezto:load' pmodule-dirs $HOME/.zsh
