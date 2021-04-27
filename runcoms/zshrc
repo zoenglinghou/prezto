@@ -4,7 +4,7 @@
 #   Sorin Ionescu <sorin.ionescu@gmail.com>
 #
 
-# zmodload zsh/zprof
+## zmodload zsh/zprof
 
 # Source Prezto.
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
@@ -13,9 +13,6 @@ fi
 
 # Customize to your needs...
 export TERM="xterm-256color"
-
-# direnv
-eval "$(direnv hook zsh)"
 
 # Aliases
 alias matlab="matlab -nodesktop -nosplash"
@@ -64,11 +61,6 @@ alias ab="podman run -dt --name archivebox --rm -p 8000:8000 -v $HOME/Nextcloud/
 
 # Pipenv
 eval "$(pipenv --completion)"
-
-# VLC + yt-dl
-function vlc-yt () {
-    org.videolan.VLC "$(youtube-dl --get-url --format best $@)"
-}
 
 # ripgrep
 alias rg="rg -p"
