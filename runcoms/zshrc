@@ -31,7 +31,7 @@ function gi() { curl -sLw "\n" https://www.toptal.com/developers/gitignore/api/$
 export HISTFILE=~/.zsh_history   # ensure history file visibility
 
 # additional completions
-fpath=(/usr/share/yadm/completion/yadm.zsh_completion $fpath)
+fpath=(/usr/share/yadm/completion/yadm.zsh_completion $HOME/.zsh/podman-completion/_podman $fpath)
 
 # youtube-dl
 alias yd="youtube-dl"
