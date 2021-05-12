@@ -41,11 +41,9 @@ zstyle ':prezto:load' pmodule \
   'autosuggestions' \
   'terminal' \
   'utility' \
-  'zlua' \
   'zsh-autopair' \
   'zsh-autoswitch-virtualenv' \
-  'zsh-autoenv' \
-  'prompt'
+  'zsh-autoenv'
 
 zstyle ':prezto:load' pmodule-dirs $HOME/.zsh
 

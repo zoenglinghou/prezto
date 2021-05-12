@@ -46,8 +46,8 @@ path=(
   /usr/local/bin
   $HOME/go/bin
   $HOME/.local/bin
+  $HOME/.cargo/bin
   /usr/local/lib/node_modules/yarn/bin
-  /var/lib/flatpak/exports/bin
   $path
 )
 

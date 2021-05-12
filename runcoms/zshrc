@@ -12,6 +12,9 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
 fi
 
 # Customize to your needs...
+eval "$(starship init zsh)"
+eval "$(zoxide init zsh)"
+
 export TERM="xterm-256color"
 
 # Aliases
@@ -31,7 +34,7 @@ function gi() { curl -sLw "\n" https://www.toptal.com/developers/gitignore/api/$
 export HISTFILE=~/.zsh_history   # ensure history file visibility
 
 # additional completions
-fpath=(/usr/share/yadm/completion/yadm.zsh_completion $HOME/.zsh/podman-completion/_podman $fpath)
+fpath=(/usr/share/zsh/site-functions $fpath)
 
 # youtube-dl
 alias yd="youtube-dl"
@@ -44,8 +47,8 @@ source /usr/share/doc/fzf/examples/completion.zsh
 [[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
 
 # zlua
-eval "$(lua ~/.zsh/zlua/z.lua --init zsh once enhanced)"
-alias z="_zlua -I"
+# eval "$(lua ~/.zsh/zlua/z.lua --init zsh once enhanced)"
+# alias z="_zlua -I"
 
 # gnupg
 export GPG_TTY=$(tty)
