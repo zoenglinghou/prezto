@@ -36,8 +36,9 @@ zstyle ':prezto:load' pmodule \
   'editor' \
   'history' \
   'git' \
+  'fzf-tab' \
   'history-substring-search' \
-  'syntax-highlighting' \
+  'f-sy-h' \
   'autosuggestions' \
   'terminal' \
   'utility' \
@@ -53,6 +54,14 @@ zstyle ':prezto:load' pmodule-dirs $HOME/.zsh
 
 # Set the query found color.
 # zstyle ':prezto:module:autosuggestions:color' found ''
+
+#
+# Completions
+#
+
+# Set the entries to ignore in static '/etc/hosts' for host completion.
+# zstyle ':prezto:module:completion:*:hosts' etc-host-ignores \
+#   '0.0.0.0' '127.0.0.1'
 
 #
 # Editor
