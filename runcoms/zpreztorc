@@ -36,8 +36,9 @@ zstyle ':prezto:load' pmodule \
   'editor' \
   'history' \
   'git' \
+  'fzf-tab' \
   'history-substring-search' \
-  'syntax-highlighting' \
+  'f-sy-h' \
   'autosuggestions' \
   'terminal' \
   'utility' \
