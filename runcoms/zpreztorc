@@ -36,15 +36,15 @@ zstyle ':prezto:load' pmodule \
   'editor' \
   'history' \
   'git' \
-  'fzf-tab' \
   'history-substring-search' \
-  'f-sy-h' \
+  'fast-syntax-highlighting' \
   'autosuggestions' \
   'terminal' \
   'utility' \
   'zsh-autopair' \
   'zsh-autoswitch-virtualenv' \
-  'zsh-autoenv'
+  'zsh-autoenv' \
+  'ripgrep'
 
 zstyle ':prezto:load' pmodule-dirs $HOME/.zsh
 

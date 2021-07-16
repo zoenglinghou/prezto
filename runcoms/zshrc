@@ -65,17 +65,12 @@ alias ab="podman run -dt --name archivebox --rm -p 8000:8000 -v $HOME/Nextcloud/
 # Pipenv
 eval "$(pipenv --completion)"
 
-# ripgrep
-alias rg="rg -p"
 
 # nnn
 alias nnn="nnn -e"
 
 # kitty
 kitty + complete setup zsh | source /dev/stdin
-
-# dgpu
-# alias dgpu="export __GLX_VENDOR_LIBRARY_NAME=nvidia && export __NV_PRIME_RENDER_OFFLOAD=1 &&"
 
 # cp
 alias cp="cp --reflink=auto"
